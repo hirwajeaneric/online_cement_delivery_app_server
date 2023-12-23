@@ -5,6 +5,14 @@ const OrderSchema = new Schema({
         type: Number,
         required: true,
     },
+    status: {
+        type: String,
+        required: true,
+        enum: {
+            values: ['Pending','Confirmed', 'Paid' ,'Delivered'],
+            message: 'Unrecognized status'
+        }
+    },
     items: [
         {
             name: {
