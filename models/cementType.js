@@ -12,12 +12,7 @@ const CementTypeSchema = new Schema({
     price: {
         required: true,
         type: Number
-    },
-    createDate: {
-        required: true,
-        type: Date,
-        default: new Date(), 
     }
-});
+}, { timestamps: true });
 
 module.exports = model('cementType', CementTypeSchema);

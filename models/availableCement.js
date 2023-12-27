@@ -17,11 +17,7 @@ const AvailableCementSchema = new Schema({
     quantity: {
         type: Number,
         default: 1
-    },
-    updateDate: {
-        type: Date,
-        required: false,
     }
-});
+}, { timestamps: true });
 
 module.exports = model('availableCement', AvailableCementSchema);

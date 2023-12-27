@@ -26,6 +26,6 @@ const UserSchema = new Schema({
             message: 'Unknown role'
         }
     },
-});
+}, { timestamps: true });
 
 module.exports = model('user', UserSchema);

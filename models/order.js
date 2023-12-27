@@ -5,6 +5,10 @@ const OrderSchema = new Schema({
         type: Number,
         required: true,
     },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    },
     status: {
         type: String,
         required: true,
@@ -13,7 +17,7 @@ const OrderSchema = new Schema({
             message: 'Unrecognized status'
         }
     },
-    items: [
+    cements: [
         {
             name: {
                 type: String,
@@ -28,11 +32,7 @@ const OrderSchema = new Schema({
                 required: true,
             }
         }
-    ],
-    date: {
-        type: Date,
-        default: new Date()
-    }
-});
+    ]
+}, { timestamps: true });
 
 module.exports = model('order', OrderSchema);

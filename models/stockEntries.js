@@ -15,18 +15,14 @@ const StockEntrySchema = new Schema({
                 'High Alumina Cement',
                 'Expansive Cement',
                 'Oil Well Cement'
-              ],
+            ],
             message: 'Types not recognized'
         }
     },
     incomingStock: {
         required: true,
-        type: Number, 
-    },
-    date: {
-        type: Date,
-        default: new Date(),                
+        type: Number,
     }
-});
+}, { timestamps: true });
 
 module.exports = model('stockEntry', StockEntrySchema);
